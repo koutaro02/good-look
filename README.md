@@ -59,7 +59,8 @@ belongs_to :spot
 - belongs_to :user
 - belongs_to :spot
 
-## companyes
+
+## companys
 
 | Column | Type | Options |
 | ------ | ---- | ------- |
