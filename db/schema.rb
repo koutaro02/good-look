@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_02_01_083838) do
     t.string "last_name", null: false
     t.string "phone_number", null: false
     t.string "company_name", null: false
-    t.integer "position", null: false
+    t.integer "position_id", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

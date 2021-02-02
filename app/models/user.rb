@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :position
+
   with_options presence: true do
     validates :family_name
     validates :last_name
@@ -11,4 +14,6 @@ class User < ApplicationRecord
     validates :company_name
     validates :position
   end
+
+  validates :position_id, numericality: { other_than: 1 }
 end
