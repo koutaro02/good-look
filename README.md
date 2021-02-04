@@ -9,11 +9,10 @@
 | phone_number | string | null: false |
 | email | string | null: false |
 | encrypted_password | string | null: false |
-| company | references | null: false, foreign_key: true |
+| company_name | string | null: false
 
 ### Association
 
-- belongs_to :company
 - has_many :user_spots
 - has_many :spots, through: user_spots
 - has_many :plans
@@ -58,17 +57,3 @@ belongs_to :spot
 
 - belongs_to :user
 - belongs_to :spot
-
-
-## companys
-
-| Column | Type | Options |
-| ------ | ---- | ------- |
-| company | string | null: false |
-| occupation | string | null: false |
-| position | integer | null: false |
-| user | references | null: false, foreign_key: true |
-
-### Association
-
-- has_many :user
