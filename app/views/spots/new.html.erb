@@ -1,0 +1,48 @@
+<div class="spot-form">
+  <h2>新規作成</h2>
+
+  <input id="address" type="textbox" value="Sydney, NSW">
+  <input type="button" value="検索" onclick="codeAddress()">
+
+  <!-- 地図情報を保存するフォーム -->
+  <%= form_for @spot do |f| %>
+  <!-- 検索値を隠しデータとして送信-->
+  <input type="hidden" name="map[address]" id="hidden_address">
+  <%= f.label :text, "テキスト" %>
+  <%= f.text_field :text %>
+  <%= f.label :image, "写真"%>
+  <%= f.file_field :image %>
+  <%= f.submit "登録" %>
+  <% end %>
+  <div id="my_map" style="width: 600px; height: 600px">
+  </div>
+</div>
+
+<script>
+var _my_address = '表示させたい地図の住所';
+function initMapWithAddress() {
+    var opts = {
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    };
+    var my_google_map = new google.maps.Map(document.getElementById('my_map'), opts);
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode(
+      {
+        'address': _my_address,
+        'region': 'jp'
+      },
+      function(result, status){
+        if(status==google.maps.GeocoderStatus.OK){
+            var latlng = result[0].geometry.location;
+            my_google_map.setCenter(latlng);
+            var marker = new google.maps.Marker({position:latlng, map:my_google_map, title:latlng.toString(), draggable:true});
+            google.maps.event.addListener(marker, 'dragend', function(event){
+                marker.setTitle(event.latLng.toString());
+            });
+
+        }
+      }
+    );
+  }
+</script>

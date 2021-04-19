@@ -1,5 +1,6 @@
 <%= render "shared/header" %>
 <div class='main'>
+ <% unless user_signed_in? %>
   <div class='title-contens'>
     <h2 class='service-title'>
       建設業の明日を変える
@@ -14,6 +15,7 @@
 <%# 上部は帯部分 %>
 
 <%# 横のメニューバー %>
+ <%  else %>
   <div class='menu-bar'>
     <div class='side-bar'>
       <div class='spot-side'>
@@ -37,17 +39,20 @@
         <div class='spot-explanation'>
           すき家 港店
         </div>
-        <div class='spot-user-name'>
-        </div>
       </div>
       <div class='center-spot'>
         <div class='spot-image'>
+          
         </div>
         <div class='spot-map'>
+          
         </div>
       </div>
       <div class='bottom-spot'>
         <div class='spot-text'>
+
+        </div>
+        <div class='spot-user-name'>
         </div>
       </div>
   <%# 現場の詳細%>
@@ -64,6 +69,7 @@
       </div>
     </div>
   </div>
+ <% end %>
 <%# 内容の表示 %>
 
 </div>
