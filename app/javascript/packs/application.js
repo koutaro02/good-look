@@ -7,6 +7,11 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("../map")
+<<<<<<< HEAD
+require('serach')
+=======
+>>>>>>> c72c5615f5dceb8d51c9a71379135b2624f20e23
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

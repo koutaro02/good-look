@@ -61,17 +61,17 @@
 }
 
 .top-spot {
-  height: 10vh;
   display: flex;
   background-color: whitesmoke;
+  margin-bottom: 10px;
 }
 
 .spot-explanation {
   margin:  10px;
-  margin-bottom: 20px;
   border-bottom: 2px solid orange;
   font-size: 20px;
 }
+
 
 .center-spot {
   height: 60vh;
@@ -80,9 +80,19 @@
   justify-content: space-around;
 }
 
+.sample-shop {
+  width: 20vw;
+  height: 50vh;
+}
+
+.sample-map {
+  width: 50vw;
+  height: 50vh;
+}
+
 .bottom-spot {
-  height: 20vh;
-  padding-bottom: 20px;
+  height: 30vh;
+  padding-bottom: 10px;
 }
 
 .plan-detail {
