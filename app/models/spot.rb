@@ -1,10 +1,13 @@
 class Spot < ApplicationRecord
+  has_many :users
+  has_one_attached :image
 
   with_options presence: true do
     validates :spot_name
+    validates :address
     validates :latitude
     validates :longitude
-    validates :text
+
   end
 
   geocoded_by :address
