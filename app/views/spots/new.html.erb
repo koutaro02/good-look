@@ -1,11 +1,7 @@
 <div class="spot-form">
   <h2>新規作成</h2>
 
-<<<<<<< HEAD
   <input id="address" type="textbox" value="マップを検索">
-=======
-  <input id="address" type="textbox" value="Sydney, NSW">
->>>>>>> c72c5615f5dceb8d51c9a71379135b2624f20e23
   <input type="button" value="検索" onclick="codeAddress()">
 
   <!-- 地図情報を保存するフォーム -->
@@ -18,16 +14,11 @@
   <%= f.file_field :image %>
   <%= f.submit "登録" %>
   <% end %>
-<<<<<<< HEAD
   <div id="map">
-=======
-  <div id="my_map" style="width: 600px; height: 600px">
->>>>>>> c72c5615f5dceb8d51c9a71379135b2624f20e23
   </div>
 </div>
 
 <script>
-<<<<<<< HEAD
   let map
   let geocoder
   let marker
@@ -91,32 +82,5 @@
         alert('Geocode was not successful for the following reason: ' + status);
       }
     });
-=======
-var _my_address = '表示させたい地図の住所';
-function initMapWithAddress() {
-    var opts = {
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-    };
-    var my_google_map = new google.maps.Map(document.getElementById('my_map'), opts);
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode(
-      {
-        'address': _my_address,
-        'region': 'jp'
-      },
-      function(result, status){
-        if(status==google.maps.GeocoderStatus.OK){
-            var latlng = result[0].geometry.location;
-            my_google_map.setCenter(latlng);
-            var marker = new google.maps.Marker({position:latlng, map:my_google_map, title:latlng.toString(), draggable:true});
-            google.maps.event.addListener(marker, 'dragend', function(event){
-                marker.setTitle(event.latLng.toString());
-            });
-
-        }
-      }
-    );
->>>>>>> c72c5615f5dceb8d51c9a71379135b2624f20e23
   }
 </script>
